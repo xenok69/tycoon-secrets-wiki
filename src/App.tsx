@@ -1,20 +1,43 @@
-import { Button } from "@/components/ui/button"
+import { HashRouter, Route, Routes } from "react-router-dom"
+
+import { AppSidebar } from "@/components/app-sidebar"
+import { Separator } from "@/components/ui/separator"
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
+import { HomePage } from "@/pages/home-page"
+import { LifecyclePage } from "@/pages/lifecycle-page"
+import { SearchPage } from "@/pages/search-page"
+import { TeamPage } from "@/pages/team-page"
+import { WikiPage } from "@/pages/wiki-page"
 
 export function App() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <HashRouter>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <header className="flex h-12 shrink-0 items-center gap-2 border-b px-4">
+            <SidebarTrigger />
+            <Separator orientation="vertical" className="h-4" />
+            <a href="#/" className="text-xs font-medium">
+              Tycoon Secrets Wiki
+            </a>
+          </header>
+          <div className="flex-1 overflow-auto p-6">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/team" element={<TeamPage />} />
+              <Route path="/lifecycle" element={<LifecyclePage />} />
+              <Route path="/*" element={<WikiPage />} />
+            </Routes>
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </HashRouter>
   )
 }
 
