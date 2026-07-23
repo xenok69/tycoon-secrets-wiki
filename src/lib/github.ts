@@ -1,7 +1,7 @@
 import { FALLBACK_COMMITS, FALLBACK_CONTRIBUTORS } from "@/lib/github-fallback-data"
 
 export const GITHUB_REPO = "xenok69/tycoon-secrets-wiki"
-export const GITHUB_BRANCH = "main"
+export const GITHUB_BRANCH = "master"
 
 const GITHUB_API = "https://api.github.com"
 
@@ -73,16 +73,18 @@ interface RawCommit {
 
 async function fetchTopRepos(username: string): Promise<RepoSummary[]> {
   try {
-    const res = await githubFetch(
-      `/users/${username}/repos?sort=stars&direction=desc&per_page=3`
-    )
+    // The GitHub REST API only supports sort=created|updated|pushed|full_name
+    // for this endpoint (no sort=stars), so we sort by stars client-side.
+    const res = await githubFetch(`/users/${username}/repos?per_page=100`)
     if (!res.ok) return []
     const repos: RawRepo[] = await res.json()
-    return repos.map((r) => ({
-      name: r.name,
-      htmlUrl: r.html_url,
-      stars: r.stargazers_count,
-    }))
+    return repos
+      .map((r) => ({
+        name: r.name,
+        htmlUrl: r.html_url,
+        stars: r.stargazers_count,
+      }))
+      .sort((a, b) => b.stars - a.stars)
   } catch {
     return []
   }
