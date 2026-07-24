@@ -139,7 +139,7 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton href="#/" size="lg">
               <img
-                src="/TycoonSecretsLogo.webp"
+                src={`${import.meta.env.BASE_URL}TycoonSecretsLogo.webp`}
                 alt="Tycoon Secrets Wiki logo"
                 className="size-6 shrink-0 object-cover"
               />
