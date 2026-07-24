@@ -18,7 +18,7 @@ Once you finished loading into the game you can basically already see the secret
 ## Hints
 
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
-Please try to actually solve the secret, as that's way more fun anways.
+Please try to actually solve the secret, as that's way more fun anyways.
 
 * Starting point: ||The gate outside the tycoon.||
 * Hint 1: ||Do you see any text on the walls?||
@@ -27,7 +27,7 @@ Please try to actually solve the secret, as that's way more fun anways.
 
 ## Solution
 
-*Note: Only use the solution if you are truely stuck or on the edge of giving up.*
+*Note: Only use the solution if you are truly stuck or on the edge of giving up.*
 
 ??>
 

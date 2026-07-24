@@ -34,10 +34,24 @@ import {
 
 function TagList({ tags }: { tags: string[] }) {
   if (tags.length === 0) return null
+
+  const tagColors: Record<string, string> = {
+    "1 stud": "bg-green-500 text-white",
+    "2 stud": "bg-yellow-500 text-black",
+    "3 stud": "bg-red-500 text-white",
+    "4 stud": "bg-pink-500 text-white",
+    "5 stud": "bg-blue-500 text-white",
+    "6 stud": "bg-gray-400 text-black",
+    "7 stud": "bg-gray-200 text-black",
+  }
+
   return (
     <div className="not-prose mb-4 flex flex-wrap gap-1.5">
       {tags.map((tag) => (
-        <Badge key={tag} variant="secondary">
+        <Badge
+          key={tag}
+          className={tagColors[tag] ?? ""}
+        >
           {tag}
         </Badge>
       ))}

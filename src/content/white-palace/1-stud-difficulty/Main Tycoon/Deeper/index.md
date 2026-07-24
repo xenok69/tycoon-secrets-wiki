@@ -19,7 +19,7 @@ The later *deeper* secrets are way harder than this one but they all share the s
 ## Hints
 
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
-Please try to actually solve the secret, as that's way more fun anways.
+Please try to actually solve the secret, as that's way more fun anyways.
 
 * Starting point: ||The conveyor belt inside the tycoon.||
 * Hint 1: ||Where could you go deeper?||
@@ -28,7 +28,7 @@ Please try to actually solve the secret, as that's way more fun anways.
 
 ## Solution
 
-*Note: Only use the solution if you are truely stuck or on the edge of giving up.*
+*Note: Only use the solution if you are truly stuck or on the edge of giving up.*
 
 ??>
 
