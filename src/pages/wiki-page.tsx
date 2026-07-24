@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import rehypeRaw from "rehype-raw"
 import {
   FileIcon,
   FileQuestionIcon,
@@ -19,6 +20,7 @@ import { Badge } from "@/components/ui/badge"
 import { Spoiler } from "@/components/spoiler"
 import { SolutionSpoiler } from "@/components/solution-spoiler"
 import { SolutionBlock } from "@/components/solution-block"
+import { Difficulty } from "@/components/difficulty"
 import { remarkSpoiler } from "@/lib/remark-spoiler"
 import type { Components } from "react-markdown"
 import {
@@ -119,6 +121,7 @@ export function WikiPage() {
       <TagList tags={page.tags} />
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkSpoiler]}
+        rehypePlugins={[rehypeRaw]}
         components={
           {
             img: ({ src, alt }) => {
@@ -128,9 +131,17 @@ export function WikiPage() {
                   : src
               return <img src={resolved} alt={alt ?? ""} />
             },
+
             spoiler: Spoiler,
             solution: SolutionSpoiler,
             "solution-block": SolutionBlock,
+            difficulty: Difficulty,
+
+            span: ({ children, className }) => (
+              <span className={className}>
+                {children}
+              </span>
+            ),
           } as Components
         }
       >
