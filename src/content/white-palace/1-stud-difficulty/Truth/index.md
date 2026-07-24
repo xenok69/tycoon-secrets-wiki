@@ -10,10 +10,10 @@ Once you finished loading into the game you can basically already see the secret
 
 | **Item** | **Value** |
 | -------- | --------- |
-| ID |  |
-| Name |  |
+| ID | 2281135895978298 |
+| Name | Truth |
 | Description | |
-| Created |  |
+| Created | 26.02.2026 |
 
 ## Hints
 

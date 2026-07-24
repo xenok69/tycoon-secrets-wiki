@@ -1,6 +1,8 @@
 # Deeper
 
-
+This secret is the prequel to [Deeper 2, the return of the deep](#/white-palace/1-stud-difficulty/Deeper%202,%20the%20return%20of%20the%20deep) and many other *deeper* secrets.
+The *deeper* series have a total of 5 secrets, including this one.
+The later *deeper* secrets are way harder than this one but they all share the same theme in a way.
 
 ## Meta
 
@@ -9,10 +11,10 @@
 
 | **Item** | **Value** |
 | -------- | --------- |
-| ID |  |
-| Name |  |
+| ID | 3418933967271824 |
+| Name | Deeper |
 | Description | |
-| Created |  |
+| Created | 28.01.2026 |
 
 ## Hints
 
