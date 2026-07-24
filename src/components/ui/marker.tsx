@@ -1,4 +1,4 @@
-import type * as React from "react"
+import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -14,24 +14,40 @@ const markerVariants = cva(
         border: "border-b border-border pb-2",
       },
     },
-    defaultVariants: {
-      variant: "default",
-    },
   }
 )
 
 function Marker({
   className,
   variant = "default",
+  render,
+  children,
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof markerVariants>) {
+}: React.ComponentProps<"div"> &
+  VariantProps<typeof markerVariants> & {
+    render?: (props: React.HTMLAttributes<HTMLElement>) => React.ReactNode
+  }) {
+  if (render) {
+    const renderProps = {
+      ...props,
+      "data-slot": "marker",
+      "data-variant": variant,
+      className: cn(markerVariants({ variant, className })),
+      children,
+    }
+
+    return render(renderProps)
+  }
+
   return (
     <div
+      {...props}
       data-slot="marker"
       data-variant={variant}
-      className={cn(markerVariants({ variant }), className)}
-      {...props}
-    />
+      className={cn(markerVariants({ variant, className }))}
+    >
+      {children}
+    </div>
   )
 }
 

@@ -6,6 +6,7 @@ import { SearchIcon } from "lucide-react"
 import { flattenPages } from "@/lib/content"
 import type { WikiPage } from "@/lib/content"
 import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
 import {
   Empty,
   EmptyDescription,
@@ -67,10 +68,14 @@ function getPageNumbers(current: number, total: number): (number | "ellipsis")[]
 export function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get("q") ?? ""
+  const tag = searchParams.get("tag") ?? ""
   const currentPage = Math.max(1, parseInt(searchParams.get("page") ?? "1", 10) || 1)
 
   const allPages = useMemo(() => flattenPages(), [])
-  const results = useMemo(() => searchPages(allPages, query), [allPages, query])
+  const results = useMemo(() => {
+    const matches = searchPages(allPages, query)
+    return tag ? matches.filter((page) => page.tags.includes(tag)) : matches
+  }, [allPages, query, tag])
 
   const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE))
   const page = Math.min(currentPage, totalPages)
@@ -78,13 +83,33 @@ export function SearchPage() {
 
   function handleQueryChange(e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value
-    setSearchParams(value ? { q: value, page: "1" } : {})
+    setSearchParams((prev) => {
+      const params = new URLSearchParams(prev)
+      if (value) params.set("q", value)
+      else params.delete("q")
+      params.delete("page")
+      return params
+    })
   }
 
   function hrefForPage(pageNum: number): string {
     const params = new URLSearchParams()
     if (query) params.set("q", query)
+    if (tag) params.set("tag", tag)
     params.set("page", String(pageNum))
+    return `#/search?${params.toString()}`
+  }
+
+  function hrefForTag(tagName: string): string {
+    const params = new URLSearchParams()
+    if (query) params.set("q", query)
+    params.set("tag", tagName)
+    return `#/search?${params.toString()}`
+  }
+
+  function hrefClearTag(): string {
+    const params = new URLSearchParams()
+    if (query) params.set("q", query)
     return `#/search?${params.toString()}`
   }
 
@@ -103,15 +128,34 @@ export function SearchPage() {
         className="mt-4"
       />
 
+      {tag && (
+        <div className="mt-3 flex items-center gap-2 text-sm">
+          <span className="text-muted-foreground">Filtering by tag:</span>
+          <a href={hrefForTag(tag)}>
+            <Badge>{tag}</Badge>
+          </a>
+          <a
+            href={hrefClearTag()}
+            className="text-xs text-muted-foreground underline-offset-2 hover:underline"
+          >
+            Clear
+          </a>
+        </div>
+      )}
+
       {results.length === 0 ? (
         <Empty className="mt-6">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <SearchIcon />
             </EmptyMedia>
-            <EmptyTitle>No pages match &ldquo;{query}&rdquo;</EmptyTitle>
+            <EmptyTitle>
+              {query
+                ? `No pages match “${query}”`
+                : `No pages tagged “${tag}”`}
+            </EmptyTitle>
             <EmptyDescription>
-              Try a different search term.
+              Try a different search term{tag ? " or clear the tag filter" : ""}.
             </EmptyDescription>
           </EmptyHeader>
         </Empty>
@@ -119,11 +163,8 @@ export function SearchPage() {
         <>
           <ul className="mt-6 flex flex-col gap-3">
             {pageItems.map((item) => (
-              <li key={item.slug}>
-                <a
-                  href={`#/${item.slug}`}
-                  className="block rounded-none border p-4 text-sm hover:bg-muted"
-                >
+              <li key={item.slug} className="rounded-none border p-4 text-sm">
+                <a href={`#/${item.slug}`} className="block hover:underline">
                   <div className="font-medium">{item.title}</div>
                   <div className="mt-0.5 text-xs text-muted-foreground">
                     {item.slug}
@@ -134,6 +175,15 @@ export function SearchPage() {
                     </p>
                   )}
                 </a>
+                {item.tags.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {item.tags.map((t) => (
+                      <a key={t} href={hrefForTag(t)}>
+                        <Badge variant="secondary">{t}</Badge>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

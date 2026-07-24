@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import {
-  BookOpenIcon,
   ChevronRightIcon,
   FileIcon,
   FolderIcon,
@@ -14,7 +13,7 @@ import {
   UsersIcon,
 } from "lucide-react"
 
-import { getTree, type WikiPage } from "@/lib/content"
+import { getTree, visibleChildren, type WikiPage } from "@/lib/content"
 import { CommandMenu } from "@/components/command-menu"
 import { useTheme } from "@/components/theme-provider"
 import {
@@ -38,7 +37,7 @@ import {
 } from "@/components/ui/sidebar"
 
 const MAX_TOP_LEVEL_PAGES = 5
-const DISCORD_INVITE_URL = "https://discord.gg/RbeEtEgw9A"
+const DISCORD_INVITE_URL = "https://discord.gg/9b9hXZu2g3"
 
 function WikiTreeItem({
   page,
@@ -50,8 +49,9 @@ function WikiTreeItem({
   const isActive = page.slug === currentSlug
   const isOnActivePath = currentSlug.startsWith(page.slug)
   const isTopLevel = page.path.length === 1
+  const children = visibleChildren(page)
 
-  if (page.children.length === 0) {
+  if (children.length === 0) {
     return (
       <SidebarMenuItem>
         <SidebarMenuButton href={`#/${page.slug}`} isActive={isActive}>
@@ -76,7 +76,7 @@ function WikiTreeItem({
         </div>
         <CollapsibleContent>
           <SidebarMenuSub>
-            {page.children.map((child) => (
+            {children.map((child) => (
               <WikiTreeItem
                 key={child.slug}
                 page={child}
@@ -92,7 +92,7 @@ function WikiTreeItem({
 
 function WikiNav({ currentSlug }: { currentSlug: string }) {
   const [expanded, setExpanded] = useState(false)
-  const topLevel = getTree().children
+  const topLevel = visibleChildren(getTree())
   const hasOverflow = topLevel.length > MAX_TOP_LEVEL_PAGES
 
   return (
@@ -138,9 +138,11 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton href="#/" size="lg">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
-                <BookOpenIcon className="size-4" />
-              </span>
+              <img
+                src="/TycoonSecretsLogo.webp"
+                alt="Tycoon Secrets Wiki logo"
+                className="size-6 shrink-0 object-cover"
+              />
               <span className="font-medium">Tycoon Secrets Wiki</span>
             </SidebarMenuButton>
           </SidebarMenuItem>

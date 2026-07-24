@@ -1,3 +1,8 @@
+export interface WikiPageMeta {
+  tags?: string[]
+  visible?: boolean
+}
+
 export interface WikiPage {
   /** URL path segments, e.g. ["factories", "automation"] */
   path: string[]
@@ -6,6 +11,11 @@ export interface WikiPage {
   title: string
   hasContent: boolean
   content: string
+  /** From this page's meta.json, defaults to [] */
+  tags: string[]
+  /** From this page's meta.json, defaults to true. Hidden pages are still
+   * reachable by direct link but are left out of nav, search, and listings. */
+  visible: boolean
   children: WikiPage[]
 }
 
@@ -14,6 +24,11 @@ const rawModules = import.meta.glob<string>("/src/content/**/index.md", {
   query: "?raw",
   import: "default",
 })
+
+const metaModules = import.meta.glob<WikiPageMeta>(
+  "/src/content/**/meta.json",
+  { eager: true, import: "default" }
+)
 
 const assetModules = import.meta.glob<string>(
   "/src/content/**/assets/*.{png,jpg,jpeg,gif,svg,webp,avif}",
@@ -34,7 +49,7 @@ function titleFromContent(content: string, fallback: string): string {
 function pathFromModuleKey(key: string): string[] {
   return key
     .replace(/^\/src\/content\//, "")
-    .replace(/\/index\.md$/, "")
+    .replace(/\/(index\.md|meta\.json)$/, "")
     .split("/")
     .filter(Boolean)
 }
@@ -48,6 +63,8 @@ function getOrCreateChild(parent: WikiPage, segment: string): WikiPage {
     title: humanize(segment),
     hasContent: false,
     content: "",
+    tags: [],
+    visible: true,
     children: [],
   }
   parent.children.push(child)
@@ -61,6 +78,8 @@ function buildTree(): WikiPage {
     title: "Home",
     hasContent: false,
     content: "",
+    tags: [],
+    visible: true,
     children: [],
   }
 
@@ -73,6 +92,16 @@ function buildTree(): WikiPage {
     node.hasContent = true
     node.content = content
     node.title = titleFromContent(content, node.title)
+  }
+
+  for (const [key, meta] of Object.entries(metaModules)) {
+    const segments = pathFromModuleKey(key)
+    let node = root
+    for (const segment of segments) {
+      node = getOrCreateChild(node, segment)
+    }
+    node.tags = meta.tags ?? []
+    node.visible = meta.visible ?? true
   }
 
   const sortTree = (node: WikiPage) => {
@@ -100,13 +129,29 @@ export function findPage(path: string[]): WikiPage | undefined {
   return node
 }
 
+/** Excludes hidden pages and their entire subtree (still reachable by direct link). */
 export function flattenPages(node: WikiPage = tree): WikiPage[] {
   const result: WikiPage[] = []
-  if (node.path.length > 0) result.push(node)
+  if (node.path.length > 0) {
+    if (!node.visible) return result
+    result.push(node)
+  }
   for (const child of node.children) {
     result.push(...flattenPages(child))
   }
   return result
+}
+
+/** Pages before folders, alphabetical within each group. */
+export function visibleChildren(node: WikiPage): WikiPage[] {
+  return node.children
+    .filter((child) => child.visible)
+    .sort((a, b) => {
+      const aIsFolder = a.children.length > 0
+      const bIsFolder = b.children.length > 0
+      if (aIsFolder !== bIsFolder) return aIsFolder ? 1 : -1
+      return a.title.localeCompare(b.title)
+    })
 }
 
 /**

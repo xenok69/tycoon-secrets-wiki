@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom"
 import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 import {
   FileIcon,
   FileQuestionIcon,
@@ -7,8 +8,19 @@ import {
   FolderOpenIcon,
 } from "lucide-react"
 
-import { findPage, resolveAssetUrl, type WikiPage } from "@/lib/content"
+import {
+  findPage,
+  resolveAssetUrl,
+  visibleChildren,
+  type WikiPage,
+} from "@/lib/content"
 import { LinkButton } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Spoiler } from "@/components/spoiler"
+import { SolutionSpoiler } from "@/components/solution-spoiler"
+import { SolutionBlock } from "@/components/solution-block"
+import { remarkSpoiler } from "@/lib/remark-spoiler"
+import type { Components } from "react-markdown"
 import {
   Empty,
   EmptyContent,
@@ -17,6 +29,19 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
+
+function TagList({ tags }: { tags: string[] }) {
+  if (tags.length === 0) return null
+  return (
+    <div className="not-prose mb-4 flex flex-wrap gap-1.5">
+      {tags.map((tag) => (
+        <Badge key={tag} variant="secondary">
+          {tag}
+        </Badge>
+      ))}
+    </div>
+  )
+}
 
 function SubpageList({ children }: { children: WikiPage[] }) {
   return (
@@ -79,9 +104,10 @@ export function WikiPage() {
           <EmptyTitle>{page.title}</EmptyTitle>
           <EmptyDescription>This page has no content yet.</EmptyDescription>
         </EmptyHeader>
-        {page.children.length > 0 && (
+        <TagList tags={page.tags} />
+        {visibleChildren(page).length > 0 && (
           <EmptyContent>
-            <SubpageList children={page.children} />
+            <SubpageList children={visibleChildren(page)} />
           </EmptyContent>
         )}
       </Empty>
@@ -90,23 +116,30 @@ export function WikiPage() {
 
   return (
     <article className="prose prose-neutral dark:prose-invert max-w-3xl">
+      <TagList tags={page.tags} />
       <ReactMarkdown
-        components={{
-          img: ({ src, alt }) => {
-            const resolved =
-              typeof src === "string"
-                ? (resolveAssetUrl(page.path, src) ?? src)
-                : src
-            return <img src={resolved} alt={alt ?? ""} />
-          },
-        }}
+        remarkPlugins={[remarkGfm, remarkSpoiler]}
+        components={
+          {
+            img: ({ src, alt }) => {
+              const resolved =
+                typeof src === "string"
+                  ? (resolveAssetUrl(page.path, src) ?? src)
+                  : src
+              return <img src={resolved} alt={alt ?? ""} />
+            },
+            spoiler: Spoiler,
+            solution: SolutionSpoiler,
+            "solution-block": SolutionBlock,
+          } as Components
+        }
       >
         {page.content}
       </ReactMarkdown>
-      {page.children.length > 0 && (
+      {visibleChildren(page).length > 0 && (
         <div className="mt-8 border-t pt-4">
           <h2>Subpages</h2>
-          <SubpageList children={page.children} />
+          <SubpageList children={visibleChildren(page)} />
         </div>
       )}
     </article>

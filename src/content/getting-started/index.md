@@ -1,7 +1,7 @@
 # Getting Started
 
 Welcome to the **Tycoon Secrets non-official official wiki**, we do not own or control the content of the actual game.
-The only [discord invite](https://discord.gg/RbeEtEgw9A) that we actually give out, is to the official 'Tycoon Secrets' discord server.
+The only [discord invite](https://discord.gg/9b9hXZu2g3) that we actually give out, is to the official 'Tycoon Secrets' discord server.
 
 ## Navigation
 
@@ -24,4 +24,4 @@ We do not want to give out false hints or information, so all content is verifie
 **Q: Why are the hints here not complete?**
 
 A: Do not worry, the hints are complete. Yet we do not want to give too obvious hints or information.
-If you still search for more hints, you can always ask the official 'Tycoon Secrets' [discord](https://discord.gg/RbeEtEgw9A) server but don't expect to get the answers directly.
+If you still search for more hints, you can always ask the official 'Tycoon Secrets' [discord](https://discord.gg/9b9hXZu2g3) server but don't expect to get the answers directly.

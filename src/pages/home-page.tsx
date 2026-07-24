@@ -1,6 +1,6 @@
 import { BookOpenIcon, FileIcon, FolderIcon } from "lucide-react"
 
-import { getTree } from "@/lib/content"
+import { getTree, visibleChildren } from "@/lib/content"
 import {
   Empty,
   EmptyDescription,
@@ -10,9 +10,9 @@ import {
 } from "@/components/ui/empty"
 
 export function HomePage() {
-  const tree = getTree()
+  const topLevel = visibleChildren(getTree())
 
-  if (tree.children.length === 0) {
+  if (topLevel.length === 0) {
     return (
       <Empty>
         <EmptyHeader>
@@ -38,7 +38,7 @@ export function HomePage() {
         Pick a page to get started.
       </p>
       <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-        {tree.children.map((page) => (
+        {topLevel.map((page) => (
           <li key={page.slug}>
             <a
               href={`#/${page.slug}`}
