@@ -1,3 +1,5 @@
+import { DIFFICULTY_COLORS } from "@/lib/difficulty"
+
 export function Difficulty({
   level,
   children,
@@ -5,18 +7,11 @@ export function Difficulty({
   level?: string
   children: React.ReactNode
 }) {
-  const colors: Record<string, string> = {
-    "1": "text-green-400",
-    "2": "text-yellow-400",
-    "3": "text-red-400",
-    "4": "text-pink-400",
-    "5": "text-blue-400",
-    "6": "text-gray-400",
-    "7": "text-gray-200",
-  }
+  const parsed = level ? Number(level) : undefined
+  const colors = parsed !== undefined ? DIFFICULTY_COLORS[parsed] : undefined
 
   return (
-    <span className={`not-prose ${colors[level ?? ""] ?? "text-gray-400"}`}>
+    <span className={`not-prose ${colors?.text ?? "text-muted-foreground"}`}>
       {children}
     </span>
   )
