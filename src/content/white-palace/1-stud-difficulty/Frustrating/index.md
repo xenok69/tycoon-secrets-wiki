@@ -30,7 +30,7 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-Head to the Roof of the White Palace after purchasing it for .
+Head to the Roof of the White Palace after purchasing it.
 There will be a Fox sitting in the centre of the Roof.
 Clicking it will start dialogue.
 Repeatedly clicking the fox will cause it to become annoyed, eventually revealing the code.
