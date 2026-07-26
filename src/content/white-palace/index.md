@@ -21,4 +21,4 @@ A secret even requires you to change some internal files to reveal it.
 But one secret in this difficulty, as some say, is one of the worst secrets in this game.
 
 The only <Difficulty level="5">**5 Stud difficulty**</Difficulty> in this place requires you to have a solid understanding of roblox itself and decoding skills.
-Some might even say this is easier than [Rich](#/white-palace/4-stud-difficulty/Rich).
+Some might even say this is easier than [Rich](#/white-palace/Rich).
