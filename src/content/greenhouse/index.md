@@ -15,7 +15,7 @@ One secret is entirely RNG-Based.
 
 Any <Difficulty level="3">**3 Stud difficulty**</Difficulty> requires a bit of knowledge about roblox itself and ciphers.
 Some secrets may contain morse code, binary or similar.
-One secret in this difficulty uses the solution of the self-proclaimed "Hardest Puzzle in Roblox".
+One secret in this difficulty uses the solution of the self-proclaimed "Hardest Puzzle on Roblox".
 
 Any <Difficulty level="4">**4 Stud difficulty**</Difficulty> requires more knowledge of ciphers and roblox itself.
 But one secret in this difficulty may use a specific browser to reveal the solution.
