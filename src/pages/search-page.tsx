@@ -6,7 +6,8 @@ import { SearchIcon } from "lucide-react"
 import { flattenPages } from "@/lib/content"
 import type { WikiPage } from "@/lib/content"
 import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
+import { TagBadge } from "@/components/tag-badge"
+import { sortDifficultyFirst } from "@/lib/difficulty"
 import {
   Empty,
   EmptyDescription,
@@ -132,7 +133,7 @@ export function SearchPage() {
         <div className="mt-3 flex items-center gap-2 text-sm">
           <span className="text-muted-foreground">Filtering by tag:</span>
           <a href={hrefForTag(tag)}>
-            <Badge>{tag}</Badge>
+            <TagBadge tag={tag} />
           </a>
           <a
             href={hrefClearTag()}
@@ -177,9 +178,9 @@ export function SearchPage() {
                 </a>
                 {item.tags.length > 0 && (
                   <div className="mt-2 flex flex-wrap gap-1.5">
-                    {item.tags.map((t) => (
+                    {sortDifficultyFirst(item.tags).map((t) => (
                       <a key={t} href={hrefForTag(t)}>
-                        <Badge variant="secondary">{t}</Badge>
+                        <TagBadge tag={t} />
                       </a>
                     ))}
                   </div>
