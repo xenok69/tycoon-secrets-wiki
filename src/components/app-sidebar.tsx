@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 
 import { getTree, visibleChildren, type WikiPage } from "@/lib/content"
+import { DIFFICULTY_COLORS } from "@/lib/difficulty"
 import { CommandMenu } from "@/components/command-menu"
 import { useTheme } from "@/components/theme-provider"
 import {
@@ -56,6 +57,12 @@ function WikiTreeItem({
       <SidebarMenuItem>
         <SidebarMenuButton href={`#/${page.slug}`} isActive={isActive}>
           {isTopLevel && <FileIcon />}
+          {page.difficultyLevel !== undefined && (
+            <span
+              aria-hidden="true"
+              className={`size-1.5 shrink-0 rounded-full ${DIFFICULTY_COLORS[page.difficultyLevel].dot}`}
+            />
+          )}
           <span>{page.title}</span>
         </SidebarMenuButton>
       </SidebarMenuItem>
@@ -68,6 +75,12 @@ function WikiTreeItem({
         <div className="flex items-center">
           <SidebarMenuButton href={`#/${page.slug}`} isActive={isActive}>
             <FolderIcon />
+            {page.difficultyLevel !== undefined && (
+              <span
+                aria-hidden="true"
+                className={`size-1.5 shrink-0 rounded-full ${DIFFICULTY_COLORS[page.difficultyLevel].dot}`}
+              />
+            )}
             <span>{page.title}</span>
           </SidebarMenuButton>
           <CollapsibleTrigger className="mr-1 flex size-6 shrink-0 items-center justify-center text-sidebar-foreground/70 hover:text-sidebar-foreground [&[aria-expanded=true]_svg]:rotate-90">
