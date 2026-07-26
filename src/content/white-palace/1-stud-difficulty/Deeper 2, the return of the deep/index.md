@@ -1,6 +1,6 @@
 # Deeper 2, the return of the deep
 
-This secret is the sequel to [Deeper](#/white-palace/1-stud-difficulty/Deeper) and many other *deeper* secrets.
+This secret is the sequel to [Deeper](#/white-palace/Deeper) and many other *deeper* secrets.
 The *deeper* series have a total of 5 secrets, including this one.
 The later *deeper* secrets are way harder than this one but they all share the same theme in a way.
 
