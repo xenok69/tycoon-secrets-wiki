@@ -22,7 +22,7 @@ Please try to actually solve the secret, as that's way more fun anyways.
 * Starting point: ||The roof above the White Palace.||
 * Hint 1: ||What do you do if you want to frustrate someone?||
 * Hint 2: ||Try interacting with the Fox an excessive amount of times.||
-* Hint 3: ||Keep on interacting with the Fox until he spats out a code.||
+* Hint 3: ||Keep on interacting with the Fox until he spits out a code.||
 
 ## Solution
 
