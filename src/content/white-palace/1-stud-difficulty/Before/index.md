@@ -1,6 +1,6 @@
 # Before
 
-
+The name of this secret, "Before" is quite literally, a free hint. It refers to when you can obtain this Secret.
 
 ## Meta
 
@@ -20,7 +20,7 @@ Use these hints to solve the secret. **Don't just enter the code** since that ru
 Please try to actually solve the secret, as that's way more fun anyways.
 
 * Starting point: ||The unclaimed tycoon.||
-* Hint 1: ||When was the Tycoon Unclaimed?||
+* Hint 1: ||When is the Tycoon Unclaimed?||
 * Hint 2: ||Rejoin the Game to Unclaim the Tycoon.||
 * Hint 3: ||Some text is visible in the Textbox in the Code Terminal.||
 
