@@ -1,3 +1,5 @@
+import { parseDifficultyTag } from "@/lib/difficulty"
+
 export interface WikiPageMeta {
   tags?: string[]
   visible?: boolean
@@ -8,6 +10,10 @@ export interface WikiPage {
   path: string[]
   /** Joined path, e.g. "factories/automation" ("" for the root) */
   slug: string
+  /** Real on-disk path segments, e.g. ["white-palace", "1-stud-difficulty",
+   * "Deeper"]. Differs from `path` for pages hoisted out of a
+   * <n>-stud-difficulty folder. Used only for asset resolution. */
+  sourcePath: string[]
   title: string
   hasContent: boolean
   content: string
@@ -16,6 +22,8 @@ export interface WikiPage {
   /** From this page's meta.json, defaults to true. Hidden pages are still
    * reachable by direct link but are left out of nav, search, and listings. */
   visible: boolean
+  /** Set when this page was hoisted out of a <n>-stud-difficulty folder. */
+  difficultyLevel?: number
   children: WikiPage[]
 }
 
@@ -54,12 +62,45 @@ function pathFromModuleKey(key: string): string[] {
     .filter(Boolean)
 }
 
+const DIFFICULTY_FOLDER_PATTERN = /^([1-7])-stud-difficulty$/i
+
+/**
+ * Drops <n>-stud-difficulty segments from a raw on-disk path, returning the
+ * public segments plus which public-segment index (if any) the level
+ * applies to — the segment immediately after the difficulty folder.
+ */
+function stripDifficultyFolders(rawSegments: string[]): {
+  publicSegments: string[]
+  levelBySegmentIndex: Map<number, number>
+} {
+  const publicSegments: string[] = []
+  const levelBySegmentIndex = new Map<number, number>()
+  let pendingLevel: number | undefined
+
+  for (const segment of rawSegments) {
+    const match = segment.match(DIFFICULTY_FOLDER_PATTERN)
+    if (match) {
+      pendingLevel = Number(match[1])
+      continue
+    }
+    publicSegments.push(segment)
+    if (pendingLevel !== undefined) {
+      levelBySegmentIndex.set(publicSegments.length - 1, pendingLevel)
+      pendingLevel = undefined
+    }
+  }
+
+  return { publicSegments, levelBySegmentIndex }
+}
+
 function getOrCreateChild(parent: WikiPage, segment: string): WikiPage {
   const existing = parent.children.find((c) => c.path.at(-1) === segment)
   if (existing) return existing
+  const path = [...parent.path, segment]
   const child: WikiPage = {
-    path: [...parent.path, segment],
-    slug: [...parent.path, segment].join("/"),
+    path,
+    slug: path.join("/"),
+    sourcePath: path,
     title: humanize(segment),
     hasContent: false,
     content: "",
@@ -75,6 +116,7 @@ function buildTree(): WikiPage {
   const root: WikiPage = {
     path: [],
     slug: "",
+    sourcePath: [],
     title: "Home",
     hasContent: false,
     content: "",
@@ -84,23 +126,36 @@ function buildTree(): WikiPage {
   }
 
   for (const [key, content] of Object.entries(rawModules)) {
-    const segments = pathFromModuleKey(key)
+    const rawSegments = pathFromModuleKey(key)
+    const { publicSegments, levelBySegmentIndex } = stripDifficultyFolders(rawSegments)
     let node = root
-    for (const segment of segments) {
+    publicSegments.forEach((segment, i) => {
       node = getOrCreateChild(node, segment)
-    }
+      const level = levelBySegmentIndex.get(i)
+      if (level !== undefined) node.difficultyLevel = level
+    })
+    node.sourcePath = rawSegments
     node.hasContent = true
     node.content = content
     node.title = titleFromContent(content, node.title)
   }
 
   for (const [key, meta] of Object.entries(metaModules)) {
-    const segments = pathFromModuleKey(key)
+    const rawSegments = pathFromModuleKey(key)
+    const { publicSegments, levelBySegmentIndex } = stripDifficultyFolders(rawSegments)
     let node = root
-    for (const segment of segments) {
+    publicSegments.forEach((segment, i) => {
       node = getOrCreateChild(node, segment)
+      const level = levelBySegmentIndex.get(i)
+      if (level !== undefined) node.difficultyLevel = level
+    })
+    node.sourcePath = rawSegments
+
+    const tags = (meta.tags ?? []).filter((tag) => parseDifficultyTag(tag) === undefined)
+    if (node.difficultyLevel !== undefined) {
+      tags.unshift(`${node.difficultyLevel} stud`)
     }
-    node.tags = meta.tags ?? []
+    node.tags = tags
     node.visible = meta.visible ?? true
   }
 
@@ -159,13 +214,13 @@ export function visibleChildren(node: WikiPage): WikiPage[] {
  * "./assets/foo.png") against the page it appears on to the bundled asset URL.
  */
 export function resolveAssetUrl(
-  pagePath: string[],
+  sourcePath: string[],
   relativeSrc: string
 ): string | undefined {
   if (/^([a-z]+:)?\/\//i.test(relativeSrc) || relativeSrc.startsWith("data:")) {
     return relativeSrc
   }
   const cleaned = relativeSrc.replace(/^\.\//, "")
-  const key = `/src/content/${[...pagePath, cleaned].join("/")}`
+  const key = `/src/content/${[...sourcePath, cleaned].join("/")}`
   return assetModules[key]
 }

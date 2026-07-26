@@ -127,7 +127,7 @@ export function WikiPage() {
             img: ({ src, alt }) => {
               const resolved =
                 typeof src === "string"
-                  ? (resolveAssetUrl(page.path, src) ?? src)
+                  ? (resolveAssetUrl(page.sourcePath, src) ?? src)
                   : src
               return <img src={resolved} alt={alt ?? ""} />
             },
