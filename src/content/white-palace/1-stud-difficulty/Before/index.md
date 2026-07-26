@@ -1,6 +1,6 @@
 # Before
 
-
+The name of this secret, "Before" is quite literally, a free hint.
 
 ## Meta
 
