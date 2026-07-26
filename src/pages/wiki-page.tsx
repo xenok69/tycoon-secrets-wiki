@@ -98,7 +98,7 @@ export function WikiPage() {
 
   if (!page.hasContent) {
     return (
-      <Empty>
+      <Empty key={page.slug}>
         <EmptyHeader>
           <EmptyMedia variant="icon">
             <FolderOpenIcon />
@@ -117,7 +117,7 @@ export function WikiPage() {
   }
 
   return (
-    <article className="prose prose-neutral dark:prose-invert max-w-3xl">
+    <article key={page.slug} className="prose prose-neutral dark:prose-invert max-w-3xl">
       <TagList tags={page.tags} />
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkSpoiler]}
