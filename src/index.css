@@ -128,8 +128,8 @@
     --difficulty-3: oklch(0.637 0.237 25.331);
     --difficulty-4: oklch(0.645 0.246 16.439);
     --difficulty-5: oklch(0.546 0.245 262.881);
-    --difficulty-6: oklch(1 0 0);
-    --difficulty-7: oklch(0 0 0);
+    --difficulty-6: oklch(0.75 0 0);
+    --difficulty-7: oklch(0.25 0 0);
 }
 
 .tag-difficulty-1, .tag-difficulty-2, .tag-difficulty-3, .tag-difficulty-4,

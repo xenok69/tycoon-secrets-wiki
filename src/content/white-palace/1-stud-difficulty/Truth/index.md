@@ -1,6 +1,6 @@
 # Truth
 
-This and [Welcome Home](#/white-palace/1-stud-difficulty/Welcome%20Home) are the easiest secrets in the whole game.
+This and [Welcome Home](#/white-palace/Welcome%20Home) are the easiest secrets in the whole game.
 Once you finished loading into the game you can basically already see the secret.
 
 ## Meta

@@ -93,6 +93,17 @@ function stripDifficultyFolders(rawSegments: string[]): {
   return { publicSegments, levelBySegmentIndex }
 }
 
+/** Strips any manual "n stud" tag and prepends the correct one derived from
+ * the folder-hoisted difficulty level (if any). Exported for testing. */
+export function tagsWithDifficulty(
+  level: number | undefined,
+  metaTags: string[]
+): string[] {
+  const withoutManual = metaTags.filter((tag) => parseDifficultyTag(tag) === undefined)
+  if (level === undefined) return withoutManual
+  return [`${level} stud`, ...withoutManual]
+}
+
 function getOrCreateChild(parent: WikiPage, segment: string): WikiPage {
   const existing = parent.children.find((c) => c.path.at(-1) === segment)
   if (existing) return existing
@@ -151,13 +162,15 @@ function buildTree(): WikiPage {
     })
     node.sourcePath = rawSegments
 
-    const tags = (meta.tags ?? []).filter((tag) => parseDifficultyTag(tag) === undefined)
-    if (node.difficultyLevel !== undefined) {
-      tags.unshift(`${node.difficultyLevel} stud`)
-    }
-    node.tags = tags
+    node.tags = meta.tags ?? []
     node.visible = meta.visible ?? true
   }
+
+  const applyDifficultyTags = (node: WikiPage) => {
+    node.tags = tagsWithDifficulty(node.difficultyLevel, node.tags)
+    node.children.forEach(applyDifficultyTags)
+  }
+  applyDifficultyTags(root)
 
   const sortTree = (node: WikiPage) => {
     node.children.sort((a, b) => a.title.localeCompare(b.title))

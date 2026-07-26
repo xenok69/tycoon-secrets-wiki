@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { findPage } from "./content"
+import { findPage, tagsWithDifficulty } from "./content"
 
 describe("difficulty folder hoisting", () => {
   it("hoists a page directly under its grandparent, skipping the difficulty folder", () => {
@@ -40,5 +40,23 @@ describe("difficulty folder hoisting", () => {
   it("leaves pages outside a difficulty folder without a difficultyLevel", () => {
     const whitePalace = findPage(["white-palace"])
     expect(whitePalace?.difficultyLevel).toBeUndefined()
+  })
+})
+
+describe("tagsWithDifficulty", () => {
+  it("prepends the derived tag and strips any manual difficulty tag", () => {
+    expect(tagsWithDifficulty(1, ["1 stud", "secret"])).toEqual(["1 stud", "secret"])
+  })
+
+  it("prepends the derived tag even when there is no manual one", () => {
+    expect(tagsWithDifficulty(3, ["secret"])).toEqual(["3 stud", "secret"])
+  })
+
+  it("strips a mismatched manual tag in favor of the derived one", () => {
+    expect(tagsWithDifficulty(2, ["5 stud", "secret"])).toEqual(["2 stud", "secret"])
+  })
+
+  it("returns tags unchanged when there is no difficulty level", () => {
+    expect(tagsWithDifficulty(undefined, ["secret", "easy"])).toEqual(["secret", "easy"])
   })
 })
