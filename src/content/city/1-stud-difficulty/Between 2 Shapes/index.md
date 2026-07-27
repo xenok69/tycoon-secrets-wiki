@@ -1,6 +1,6 @@
-# br4vedthr0ghth3d4rk3ss0fhe11
+# Between 2 Shapes
 
-br4vedthr0ghth3d4rk3ss0fhe11
+The name has nothing to do with the Puzzle or Secret AT ALL.
 
 ## Meta
 
@@ -9,29 +9,29 @@ br4vedthr0ghth3d4rk3ss0fhe11
 
 | **Item** | **Value** |
 | -------- | --------- |
-| ID | br4vedthr0ghth3d4rk3ss0fhe11 |
-| Name | br4vedthr0ghth3d4rk3ss0fhe11 |
-| Description | br4vedthr0ghth3d4rk3ss0fhe11 |
-| Created | 00.00.2000 |
+| ID | 719973101057702 |
+| Name | Between 2 Shapes |
+| Description | |
+| Created | 03.18.2000 |
 
 ## Hints
 
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
 Please try to actually solve the secret, as that's way more fun anyways.
 
-* Starting point: ||br4vedthr0ghth3d4rk3ss0fhe11||
-* Hint 1: ||br4vedthr0ghth3d4rk3ss0fhe11||
-* Hint 2: ||br4vedthr0ghth3d4rk3ss0fhe11||
-* Hint 3: ||br4vedthr0ghth3d4rk3ss0fhe11||
+* Starting point: ||Below the City||
+* Hint 1: ||Try looking below.||
+* Hint 2: ||Do you really need another hint?||
 
 ## Solution
 
 *Note: Only use the solution if you are truly stuck or on the edge of giving up.*
 
 ??>
+After buying the 'Something' structure, fall down and catch yourself with the edge of the outside decoration, 
+and the code should be in between the main structure and a fading decoration.
+If you were to input the code into the Code Terminal, you would receive the Secret.
 
-br4vedthr0ghth3d4rk3ss0fhe11
-
-**Code: br4vedthr0ghth3d4rk3ss0fhe11**
+**Code: as4bove50below**
 
 ??<
