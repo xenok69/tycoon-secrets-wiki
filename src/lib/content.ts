@@ -210,14 +210,29 @@ export function flattenPages(node: WikiPage = tree): WikiPage[] {
   return result
 }
 
-/** Pages before folders, alphabetical within each group. */
+/**
+ * Leveled pages (hoisted out of a <n>-stud-difficulty folder) first, hardest
+ * to easiest, alphabetical within a level. Unleveled pages/folders after:
+ * pages before folders, alphabetical within each group.
+ */
 export function visibleChildren(node: WikiPage): WikiPage[] {
   return node.children
     .filter((child) => child.visible)
     .sort((a, b) => {
-      const aIsFolder = a.children.length > 0
-      const bIsFolder = b.children.length > 0
-      if (aIsFolder !== bIsFolder) return aIsFolder ? 1 : -1
+      const aLeveled = a.difficultyLevel !== undefined
+      const bLeveled = b.difficultyLevel !== undefined
+      if (aLeveled !== bLeveled) return aLeveled ? -1 : 1
+
+      if (aLeveled && bLeveled && a.difficultyLevel !== b.difficultyLevel) {
+        return b.difficultyLevel! - a.difficultyLevel!
+      }
+
+      if (!aLeveled) {
+        const aIsFolder = a.children.length > 0
+        const bIsFolder = b.children.length > 0
+        if (aIsFolder !== bIsFolder) return aIsFolder ? 1 : -1
+      }
+
       return a.title.localeCompare(b.title)
     })
 }
