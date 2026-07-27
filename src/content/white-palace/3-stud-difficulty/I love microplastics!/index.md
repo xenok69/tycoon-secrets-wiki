@@ -1,7 +1,8 @@
 # I love microplastics!
 
-Thanks to Louis Braille, the solution of this secret is Possible! 
-
+Requires the uderstanding of the Roblox Materials.
+This Secret is also one of Many that break FV Webhook in Tycoon Secrets Discord Server.
+This is because the Name of this Secret contains an Exclaimation Mark [!].
 ## Meta
 
 *Note: This is the meta data you can get with a GET request.*
