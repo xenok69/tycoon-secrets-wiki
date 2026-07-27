@@ -33,6 +33,6 @@ After buying the 'Something' structure, fall down and catch yourself with the ed
 and the code should be in between the main structure and a fading decoration.
 If you were to input the code into the Code Terminal, you would receive the Secret.
 
-**Code: as4bove50below**
+**Code: as4bove5obelow**
 
 ??<
