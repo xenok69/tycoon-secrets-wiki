@@ -9,10 +9,10 @@ Da Moneh...
 
 | **Item** | **Value** |
 | -------- | --------- |
-| ID | 599438021537301 |
-| Name | Attack on Droppers |
+| ID | 3667280221611371 |
+| Name | Rich |
 | Description | |
-| Created | 24.02.2026 |
+| Created | 30.05.2026 |
 
 ## Hints
 
