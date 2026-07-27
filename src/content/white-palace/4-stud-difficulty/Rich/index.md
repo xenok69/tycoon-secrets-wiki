@@ -20,7 +20,7 @@ Use these hints to solve the secret. **Don't just enter the code** since that ru
 Please try to actually solve the secret, as that's way more fun anyways.
 
 * Starting point: ||TURK LIRA ON TOP RERRRRR||
-* Hint 1: ||BUY THE DUCK FOR MORE LUCKKK|
+* Hint 1: ||BUY THE DUCK FOR MORE LUCKKK||
 * Hint 2: ||YOU SHOULD, DEEP NOW!||
 * Hint 3: ||The Deep, You mean the Peak right?||
 
