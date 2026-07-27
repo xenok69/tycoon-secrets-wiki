@@ -28,6 +28,7 @@ Please try to actually solve the secret, as that's way more fun anyways.
 *Note: Only use the solution if you are truly stuck or on the edge of giving up.*
 
 ??>
+
 After buying the 'Something' structure, fall down and catch yourself with the edge of the outside decoration, 
 and the code should be in between the main structure and a fading decoration.
 If you were to input the code into the Code Terminal, you would receive the Secret.
