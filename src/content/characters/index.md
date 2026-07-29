@@ -39,7 +39,7 @@ Characters are NPCs within the game.
 - "Stop colliding with me, bro."
 - "Sup."
 - "Ngl, if i were to make a puzzle, i would make a devious one, like, a reverse shifted caesar cipher, like, shift it -1 -2 or -13 lol, or reverse and shifted, I don't think anyone done that before. (Not a secret.)"
-- "Un dels codis es el nom d'aquest idioma amb un '4n' al final en comptes d'una 'a'."
+- "Un dels codis és el nom d'aquest idioma amb un '4n' al final en comptes d'una 'a'."
 - "Hubert was the first to discover Puthing Around [DIFFICULTY: 1000] [Secret Universe]"
 - "Feo's most watched video on his second channel is about this game lol."
 - "Krizis, please update ACBAS, for the love of God."
@@ -56,7 +56,7 @@ Characters are NPCs within the game.
 - "are you good?"
 - "stop?"
 - "PLEASE??????????"
-- "**SOLUTION OF THE [FRUSTRATING](#/white-palace/Frustrating) SECRET**"
+- "**SOLUTION OF THE [FRUSTRATING](#/places/white-palace/Frustrating) SECRET**"
 
 ---
 
