@@ -23,6 +23,7 @@ Characters are NPCs within the game.
 - "Thanks, Bundun. You're the GOAT."
 - "Tycoon Secrets forever!"
 - "Yo how do i get welcome home"
+- "Hi, my name is Hub3rt."
 - "Deltarune Chapter 5 was pretty good."
 - "ArcaneSecrets_LEAK.RBXL"
 - "Thanks, ImBadAtNamingThings. You're the GOAT."
