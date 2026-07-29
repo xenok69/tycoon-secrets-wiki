@@ -15,7 +15,6 @@ Characters are NPCs within the game.
 ### **Hubert**'s Dialogs
 - "Stupid solvers solve stupid puzzles"(This line of dialog is censored by Roblox)
 - "I am trapped here against my will. Wdym, 'First time'?"
-- "??? ???? ?? ????????"
 - "I'm priceless."
 - "The code is gull1bl3(???)"
 - "Do you want to know why I'm always smiling? No? Okay..."
@@ -55,7 +54,7 @@ Characters are NPCs within the game.
 - "dude"
 - "are you good?"
 - "stop?"
-- "PLEASE??????????"
+- "PLEASE???"
 - "**SOLUTION OF THE [FRUSTRATING](#/places/white-palace/Frustrating) SECRET**"
 
 ---
