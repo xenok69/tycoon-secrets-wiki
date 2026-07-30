@@ -85,7 +85,7 @@ Characters are NPCs within the game.
 - "You think you can just walk in here?"
 - "We are the APEX PREDATORS of these waters!!!"
 - "You will be punished, you'll see"
-- "**[Deeper -1](#/places/deep/Deeper_-1)**
+- "**[Deeper -1](#/places/deep/Deeper -1)**
 
 ---
 *DM @thegoofytoaster on Discord if you see a missing dialog, they would add it totally ok👍*
