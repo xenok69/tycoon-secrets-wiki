@@ -1,11 +1,10 @@
-# City
+# Deep
 
-The *city* is [VERTEX FILL THIS IN ALSO DONT NAME THE COMMIT "dih" AGAIN :sob:].
-In this place you can find **20 Secrets** *(as of 24.07.2026)*.
-Ranging anywhere from 1 to 6 Stud difficulty.
+The *deep* is the dimension for the *deep* fish species.
+It is the *deep*'s primary habitat. They've been swimming in this dimension for **200** years.
+In this place you can find **1 Secret** *(as of 31.12.1999)*.
+It contains one 6 Stud difficulty.
 
 ## Difficulties
 
-The only <Difficulty level="5">**5 Stud difficulty**</Difficulty> in this place requires you to have a solid understanding of VERTEX.
-
-The only <Difficulty level="6">**6 Stud difficulty**</Difficulty> requires more VERTEX.
+The only <Difficulty level="6">**6 Stud difficulty**</Difficulty> requires obby skills.
