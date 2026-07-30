@@ -7,7 +7,7 @@ Characters are NPCs within the game.
 | Hubert | White Palace | Our Beloved Hubert. |
 | Fox | White Palace | Its a Fox. |
 | Bacon Hair | The Shrouded City | He really likes Donuts. |
-| Fish | Deep | Fish. Fish. Fish |
+| Fish | Deep | Fish. Fish. Fish. |
 
 ## Extra Information
 
@@ -85,7 +85,7 @@ Characters are NPCs within the game.
 - "You think you can just walk in here?"
 - "We are the APEX PREDATORS of these waters!!!"
 - "You will be punished, you'll see"
-- "**[Deeper -1](#/places/deep/Deeper -1)**
+- "**[Rich](#/deep/Deeper -1)**"
 
 ---
 *DM @thegoofytoaster on Discord if you see a missing dialog, they would add it totally ok👍*
