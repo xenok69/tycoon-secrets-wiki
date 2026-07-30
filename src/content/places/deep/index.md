@@ -7,4 +7,4 @@ It contains one 6 Stud difficulty.
 
 ## Difficulties
 
-The only <Difficulty level="6">**6 Stud difficulty**</Difficulty> requires obby skills.
+The only <Difficulty level="6">**6 Stud difficulty**</Difficulty> requires intermediate-level obby skills.
