@@ -11,7 +11,8 @@ This secret is the 2nd 1-stud secret that can be found in the Greenhouse area.
 | -------- | --------- |
 | ID | 1041375264939738 |
 | Description | |
-| Created | 1.07.2026 |
+| Name | Fusion |
+| Created | 01.07.2026 |
 
 ## Hints
 
@@ -28,7 +29,8 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-Drop the Speed and Gravity coils onto each other by pressing Backspace, then checking the toolbar for the answer.
+Drop the Speed and Gravity coils onto each other by pressing Backspace, this should create the **Fusion** Coil. Then check it's tooltip for the solution.
+
 **Code: c0l0rcomb1n3r**
 
 ??<

@@ -1,6 +1,6 @@
-# br4vedthr0ghth3d4rk3ss0fhe11
+# Forgotten
 
-br4vedthr0ghth3d4rk3ss0fhe11
+**Forgotten** is one of the Few Secrets that are actually found in the **Haze**, and not the **Shrouded City**.
 
 ## Meta
 
@@ -9,20 +9,19 @@ br4vedthr0ghth3d4rk3ss0fhe11
 
 | **Item** | **Value** |
 | -------- | --------- |
-| ID | br4vedthr0ghth3d4rk3ss0fhe11 |
-| Name | br4vedthr0ghth3d4rk3ss0fhe11 |
-| Description | br4vedthr0ghth3d4rk3ss0fhe11 |
-| Created | 00.00.2000 |
+| ID | 604379940586095 |
+| Name | Forgotten |
+| Description | |
+| Created | 06.04.2026 |
 
 ## Hints
 
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
 Please try to actually solve the secret, as that's way more fun anyways.
 
-* Starting point: ||br4vedthr0ghth3d4rk3ss0fhe11||
-* Hint 1: ||br4vedthr0ghth3d4rk3ss0fhe11||
-* Hint 2: ||br4vedthr0ghth3d4rk3ss0fhe11||
-* Hint 3: ||br4vedthr0ghth3d4rk3ss0fhe11||
+* Starting point: ||Main Path.||
+* Hint 1: ||Walk until you reach a specific part...||
+* Hint 2: ||G||
 
 ## Solution
 
@@ -30,8 +29,8 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-br4vedthr0ghth3d4rk3ss0fhe11
+yooohoooo ohhh vertex this is your job i forgfor :skull:
 
-**Code: br4vedthr0ghth3d4rk3ss0fhe11**
+**Code: d3ment1a**
 
 ??<
