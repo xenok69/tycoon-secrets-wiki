@@ -1,6 +1,6 @@
 # Rich
 
-Da Moneh...
+How Rich!
 
 ## Meta
 

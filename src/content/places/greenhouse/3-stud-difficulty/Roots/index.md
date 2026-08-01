@@ -1,6 +1,6 @@
 # Roots
 
-Extremely Confusing Morse Code Ahead...
+Twists and turns...
 
 ## Meta
 
@@ -19,9 +19,9 @@ Extremely Confusing Morse Code Ahead...
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
 Please try to actually solve the secret, as that's way more fun anyways.
 
-* Starting point: ||placeholder||
-* Hint 1: ||placeholder||
-* Hint 2: ||placeholder||
+* Starting point: ||The roots in the greenhouse (wow)!||
+* Hint 1: ||The root the furthest to the right from the entrance of the greenhouse.||
+* Hint 2: ||Look at the base.||
 
 ## Solution
 
@@ -29,7 +29,8 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-ALL YOU VERTEX
+At the base of the root, there is a . on the left and a - on the right. The middle root represents a space. When a root turns left, put a dot, and when it turns right, put a dash.
+<br> For example, the first root would be: ...-
 
 **Code: viney4rd**
 

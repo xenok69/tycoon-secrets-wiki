@@ -1,6 +1,6 @@
-# Cup holder
+# Concussion
 
-Free Hint: The name has nothing to do with the Puzzle or Solution AT ALL.
+Father of Perpetuum???
 
 ## Meta
 
@@ -9,8 +9,8 @@ Free Hint: The name has nothing to do with the Puzzle or Solution AT ALL.
 
 | **Item** | **Value** |
 | -------- | --------- |
-| ID | 2814010309297060 |
-| Name | Cup holder |
+| ID | 4171614406440852 |
+| Name | Concussion |
 | Description | |
 | Created | 22.04.2026 |
 
@@ -19,9 +19,9 @@ Free Hint: The name has nothing to do with the Puzzle or Solution AT ALL.
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
 Please try to actually solve the secret, as that's way more fun anyways.
 
-* Starting point: ||The Gravity coil holder.||
-* Hint 1: ||ALL YOU VERTEX||
-* Hint 2: ||ALL YOU VERTEX||
+* Starting point: ||The Ceiling||
+* Hint 1: ||ROYGBIV||
+* Hint 2: ||Invert||
 
 ## Solution
 
@@ -29,8 +29,8 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-ALL YOU VERTEX
+By inverting the colors of the ceiling cubes, you get the colors of the rainbow. By clicking each cube in the order of the colors of the rainbow, text is revealed on each cube. By going in order again and noting down the text, you get the answer.
 
-**Code: groots**
+**Code: tast3thera1nbows**
 
 ??<

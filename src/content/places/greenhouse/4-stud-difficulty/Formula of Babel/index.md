@@ -1,6 +1,6 @@
 # Formula of Babel
 
-WHAT IS "k = 782359036754958302912033474304573522454400684042272685394878325411422840805688045817717339708910047176080386184999199900245514133924732225066529869465251613698878071338103937808514932997107441374420498612242183988936959246335879096161807513297436525499788597179583338261801252279954581476774656817291429477875712"??????????
+yo this tower is going really we- bro, ¿qué está pasando?
 
 ## Meta
 
@@ -19,9 +19,9 @@ WHAT IS "k = 7823590367549583029120334743045735224544006840422726853948783254114
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
 Please try to actually solve the secret, as that's way more fun anyways.
 
-* Starting point: ||ALL YOU VERTEX||
-* Hint 1: ||ALL YOU VERTEX||
-* Hint 2: ||ALL YOU VERTEX||
+* Starting point: ||On one of the walls below the island||
+* Hint 1: ||What is the name of a discord bot that lets you make a fake Discord profile you can send messages through, without the last 3 letters?||
+* Hint 2: ||Why am I talking to myself?||
 
 ## Solution
 
@@ -29,8 +29,9 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-ALL YOU VERTEX
+By taking the numbers, and inputting into a visualizer for tupper's self referential formula, it shows you the code.
 
 **Code: prec10usly**
 
+##### to my other contributors of the wiki, yes, hint 2 isn't a mistake.
 ??<

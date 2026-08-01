@@ -1,6 +1,6 @@
 # Problem Resolved
 
-VERTEX FO THIS PLZ I SPENT TOO LONG ON THESE
+Police Inspector here! 🚨 NOTE THAT THIS PUZZLE IS IMPOSSIBLE FOR MOBILE 🚨
 
 ## Meta
 
@@ -19,10 +19,10 @@ VERTEX FO THIS PLZ I SPENT TOO LONG ON THESE
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
 Please try to actually solve the secret, as that's way more fun anyways.
 
-* Starting point: ||ALL YOU VERTEX||
-* Hint 1: ||ALL YOU VERTEX||
-* Hint 2: ||ALL YOU VERTEX||
-* Hint 3: ||nu7rq||
+* Starting point: ||Behind the Large board at the witness puzzle area.||
+* Hint 1: ||This cannot be done on certain browsers.||
+* Hint 2: ||Inspect||
+* Hint 3: ||Network||
 
 ## Solution
 
@@ -30,7 +30,9 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-ALL YOU VERTEX
+By using the link provided behind the witness board, it sends you to an error. However if you go to the "network" tab of inspect element and reload the page, you'll notice an error called
+resolved-link, or something close to it. In order to get it to stay instead of disappearing, either turn on preserve logs or disable the debugger as soon as it appears. By clicking
+on the error and going to the response of it, the code will be there.
 
 **Code: 7hed4rkest0fpalac3s**
 

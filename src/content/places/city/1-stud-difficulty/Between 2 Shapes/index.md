@@ -29,9 +29,8 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-After buying the 'Something' structure, fall down and catch yourself with the edge of the outside decoration, 
+After buying the 'Something' structure, either zoom your camera out or fall down and catch yourself with the edge of the outside decoration, 
 and the code should be in between the main structure and a fading decoration.
-If you were to input the code into the Code Terminal, you would receive the Secret.
 
 **Code: as4bove5obelow**
 

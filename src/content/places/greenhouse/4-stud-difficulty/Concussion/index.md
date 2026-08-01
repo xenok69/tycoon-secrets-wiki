@@ -19,9 +19,9 @@ Father of Perpetuum???
 Use these hints to solve the secret. **Don't just enter the code** since that ruins the game for you and others.
 Please try to actually solve the secret, as that's way more fun anyways.
 
-* Starting point: ||ALL YOU VERTEX||
-* Hint 1: ||ALL YOU VERTEX||
-* Hint 2: ||ALL YOU VERTEX||
+* Starting point: ||Greenhouse, look up.||
+* Hint 1: ||ROYGBIV||
+* Hint 2: ||Opposites||
 
 ## Solution
 
@@ -29,7 +29,8 @@ Please try to actually solve the secret, as that's way more fun anyways.
 
 ??>
 
-ALL YOU VERTEX
+On the ceiling of the greenhouse, there are cubes. By inverting their colors, you get the colors of the rainbow. Upon clicking on them in the ROYGBIV order, they turn back to their non-inverted colors. On each cube there will now be a piece of text, by going in the
+ROYGBIV order once again, you get the code.
 
 **Code: tast3thera1nbows**
 

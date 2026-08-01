@@ -21,8 +21,8 @@ Only use these Hints if you are truly stuck or on the edge of giving up.
 * Starting point: ||The White Palace||
 * Hint 1: ||Perchance, the code you found was a link.||
 * Hint 2: ||The code is a Roblox Join Link.||
-* Hint 3: ||You Browser is not Supported, try Switching browsers.||
+* Hint 3: ||Your Browser is not Supported, try Switching browsers.||
 
 ## Solution
 
-*Note: To comply, with the Rules set by Nil for Wikis, we will not be revealing the code for this Secret.*
+*Note: To comply with the Rules set by Nil for Wikis, we will not be revealing the code for this Secret.*
