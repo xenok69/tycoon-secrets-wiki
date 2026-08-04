@@ -1,8 +1,11 @@
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { useMarkEmptyPage } from "@/hooks/use-empty-page"
 
 function Empty({ className, ...props }: React.ComponentProps<"div">) {
+  useMarkEmptyPage(true)
+
   return (
     <div
       data-slot="empty"

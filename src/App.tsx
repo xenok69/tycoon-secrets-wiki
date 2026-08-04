@@ -1,6 +1,7 @@
 import { HashRouter, Route, Routes } from "react-router-dom"
 
 import { AppSidebar } from "@/components/app-sidebar"
+import { PageClouds } from "@/components/empty-page-clouds"
 import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
@@ -27,13 +28,15 @@ export function App() {
             </a>
           </header>
           <div className="flex-1 overflow-auto p-6">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/team" element={<TeamPage />} />
-              <Route path="/lifecycle" element={<LifecyclePage />} />
-              <Route path="/*" element={<WikiPage />} />
-            </Routes>
+            <PageClouds>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/search" element={<SearchPage />} />
+                <Route path="/team" element={<TeamPage />} />
+                <Route path="/lifecycle" element={<LifecyclePage />} />
+                <Route path="/*" element={<WikiPage />} />
+              </Routes>
+            </PageClouds>
           </div>
         </SidebarInset>
       </SidebarProvider>
